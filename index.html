@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skeleton Model</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+    .skeleton-container {
+      text-align: center;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .skeleton-container img {
+      width: 100%;
+      max-width: 850px;
+      height: auto;
+    }
+
+    .skeleton-part {
+      position: absolute;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 30, 60, 0.9);
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.6);
+      border-radius: 10px;
+      z-index: 1000;
+      text-align: center;
+      border: 2px solid #00bfff;
+      color: #f8f9fa;
+      width: 320px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .popup.show {
+      display: block;
+    }
+
+    .close-btn {
+      text-align: right;
+    }
+
+    .close-btn button {
+      background: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .popup img {
+      width: 150px;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+      border-radius: 8px;
+      border: 2px solid #00bfff;
+      box-shadow: 0 0 10px #00bfff;
+    }
+
+    .head { top: 9%; left: 47%; width: 10%; height: 10%; }
+    .torso { top: 22%; left: 44%; width: 16%; height: 15%; }
+    .pelvis { top: 40%; left: 44%; width: 16%; height: 11%; }
+    .left-arm { top: 50%; left: 34%; width: 10%; height: 10%; }
+    .right-arm { top: 50%; left: 60%; width: 10%; height: 10%; }
+    .humerus-right { top: 23%; left: 58%; width: 10%; height: 15%; }
+    .thigh-right { top: 48%; left: 53%; width: 7%; height: 18%; }
+    .knee-right { top: 65%; left: 53%; width: 7%; height: 5%; }
+    .lower-leg-right { top: 70%; left: 53%; width: 7%; height: 17%; }
+    .humerus-left { top: 23%; left: 38%; width: 6%; height: 15%; }
+    .forearm-left { top: 35%; left: 38%; width: 5%; height: 15%; }
+    .thigh-left { top: 48%; left: 43%; width: 7%; height: 18%; }
+    .knee-left { top: 65%; left: 45%; width: 5%; height: 5%; }
+    .lower-leg-left { top: 70%; left: 45%; width: 5%; height: 17%; }
+
+    .forearm-right { top: 35%; left: 60%; width: 10%; height: 15%; }
+    .left-leg { top: 83%; left: 42%; width: 10%; height: 10%; }
+    .right-leg { top: 83%; left: 53%; width: 10%; height: 10%; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="icon-container">
+      <img src="Logo2.png" alt="Icon Image" width="50" height="50">
+    </div>
+    <h2 class="Logo">Bonetap</h2>
+    <nav class="navigation">
+      <ul>
+        <a href="index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Contact.html">Contact</a>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="skeleton-container">
+    <img id="skeleton" src="skeleton_model.png" alt="Skeleton Model">
+    <div class="skeleton-part head" onclick="document.getElementById('popup-head').classList.add('show')"></div>
+    <div class="skeleton-part torso" onclick="document.getElementById('popup-torso').classList.add('show')"></div>
+    <div class="skeleton-part pelvis" onclick="document.getElementById('popup-pelvis').classList.add('show')"></div>
+    <div class="skeleton-part humerus-right" onclick="document.getElementById('popup-humerus-right').classList.add('show')"></div>
+    <div class="skeleton-part forearm-right" onclick="document.getElementById('popup-forearm-right').classList.add('show')"></div>
+    <div class="skeleton-part thigh-right" onclick="document.getElementById('popup-thigh-right').classList.add('show')"></div>
+    <div class="skeleton-part knee-right" onclick="document.getElementById('popup-knee-right').classList.add('show')"></div>
+    <div class="skeleton-part lower-leg-right" onclick="document.getElementById('popup-lower-leg-right').classList.add('show')"></div>
+    <div class="skeleton-part humerus-left" onclick="document.getElementById('popup-humerus-left').classList.add('show')"></div>
+    <div class="skeleton-part forearm-left" onclick="document.getElementById('popup-forearm-left').classList.add('show')"></div>
+    <div class="skeleton-part thigh-left" onclick="document.getElementById('popup-thigh-left').classList.add('show')"></div>
+    <div class="skeleton-part knee-left" onclick="document.getElementById('popup-knee-left').classList.add('show')"></div>
+    <div class="skeleton-part lower-leg-left" onclick="document.getElementById('popup-lower-leg-left').classList.add('show')"></div>
+
+
+    
+    <div class="skeleton-part left-arm" onclick="document.getElementById('popup-left-arm').classList.add('show')"></div>
+    <div class="skeleton-part right-arm" onclick="document.getElementById('popup-right-arm').classList.add('show')"></div>
+    <div class="skeleton-part left-leg" onclick="document.getElementById('popup-left-leg').classList.add('show')"></div>
+    <div class="skeleton-part right-leg" onclick="document.getElementById('popup-right-leg').classList.add('show')"></div>
+  </div>
+
+
+
+
+
+
+  <div id="popup-head" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-head').classList.remove('show')">Close</button></div>
+    <h2>Skull</h2>
+    <img src="head.png" alt="Skull">
+    <p>The skull protects the brain and supports the structure of the face. It is made up of 22 bones that are connected by sutures. Inside the skull is the brain, which controls all the functions of the body. The eyes, ears, nose, and mouth are located in the front of the head. The skull also helps maintain balance.</p>
+  </div>
+
+  <div id="popup-torso" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-torso').classList.remove('show')">Close</button></div>
+    <h2>Torso</h2>
+    <img src="torso.png" alt="torso">
+    <p>The torso contains vital organs such as the heart and lungs. The ribs and spine protect the internal organs from injury. The diaphragm, a muscle below the lungs, helps with breathing. The spinal column provides stability and mobility of the body. The torso connects the upper and lower body.</p>
+  </div>
+
+<div id="popup-pelvis" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-pelvis').classList.remove('show')">Close</button></div>
+    <h2>Pelvis</h2>
+    <img src="pelvis.png" alt="pelvis">
+    <p>It is not a single bone, but a complex structure composed of three main bones, which are joined in a single ring. The pelvis consists of the following bones:
+      Two pelvic bones (os coxae): Each pelvic bone is a large, irregular bone that forms the sides and front of the pelvis. At an early age, it consists of three separate parts:
+      Iliac bone (os ilium)
+      sciatic bone (os ischii)
+      pubic bone (os pubis)</p>
+  </div>
+
+<div id="popup-forearm-right" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-forearm-right').classList.remove('show')">Close</button></div>
+    <h2>Forearm</h2>
+    <img src="forearm-right.png" alt="forearm-right">
+    <p>The forearm contains two bones, the ulna and the radius. The ulna is on the pinky side and forms the main part of the elbow, with the olecranon at the tip and the trochlear notch fitting the humerus. The radius is on the thumb side and helps form the wrist, with its head allowing rotation and 
+      the radial tuberosity serving as the biceps attachment. The two bones are connected by the interosseous membrane. When the palm faces up, they are parallel, and when the palm faces down, the radius crosses over the ulna.</p>
+  </div>
+
+  <div id="popup-forearm-left" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-forearm-left').classList.remove('show')">Close</button></div>
+    <h2>Forearm</h2>
+    <img src="forearm-left.png" alt="forearm-left">
+    <p>The forearm contains two bones, the ulna and the radius. The ulna is on the pinky side and forms the main part of the elbow, with the olecranon at the tip and the trochlear notch fitting the humerus. The radius is on the thumb side and helps form the wrist, with its head allowing rotation and 
+      the radial tuberosity serving as the biceps attachment. The two bones are connected by the interosseous membrane. When the palm faces up, they are parallel, and when the palm faces down, the radius crosses over the ulna.</p>
+  </div>
+
+<div id="popup-humerus-right" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-humerus-right').classList.remove('show')">Close</button></div>
+    <h2>Upper arm</h2>
+    <img src="humerus-right.png" alt="humerus-right">
+    <p>The humerus is the long bone of the upper arm, extending from the shoulder to the elbow. Its rounded head fits into the shoulder socket, allowing a wide range of motion. 
+      The shaft provides attachment points for muscles like the biceps and triceps, while the distal end forms the elbow joint with the radius and ulna. 
+      The humerus supports arm movement and connects the shoulder to the forearm.</p>
+  </div>
+
+<div id="popup-humerus-left" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-humerus-left').classList.remove('show')">Close</button></div>
+    <h2>Upper arm</h2>
+    <img src="humerus-left.png" alt="humerus-left">
+    <p>The humerus is the long bone of the upper arm, extending from the shoulder to the elbow. Its rounded head fits into the shoulder socket, allowing a wide range of motion. 
+      The shaft provides attachment points for muscles like the biceps and triceps, while the distal end forms the elbow joint with the radius and ulna. 
+      The humerus supports arm movement and connects the shoulder to the forearm.</p>
+  </div>
+
+
+
+
+
+
+<div id="popup-thigh-right" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-thigh-right').classList.remove('show')">Close</button></div>
+    <h2>Thigh-Femur</h2>
+    <img src="thigh-right.png" alt="thigh-right">
+    <p>The femur is the long bone of the thigh, extending from the hip to the knee. Its rounded head fits into the hip socket, forming the hip joint and allowing a wide range of 
+      leg movement. The shaft of the femur provides attachment points for muscles such as the quadriceps and hamstrings. At the distal end, the femur forms the knee joint with the 
+      tibia and patella, supporting weight and enabling walking, running, and jumping.</p>
+  </div>
+
+  <div id="popup-thigh-left" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-thigh-left').classList.remove('show')">Close</button></div>
+    <h2>Thigh-Femur</h2>
+    <img src="thigh-left.png" alt="thigh-left">
+    <p>The femur is the long bone of the thigh, extending from the hip to the knee. Its rounded head fits into the hip socket, forming the hip joint and allowing a wide range of 
+      leg movement. The shaft of the femur provides attachment points for muscles such as the quadriceps and hamstrings. At the distal end, the femur forms the knee joint with the 
+      tibia and patella, supporting weight and enabling walking, running, and jumping.</p>
+  </div>
+
+<div id="popup-knee-right" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-knee-right').classList.remove('show')">Close</button></div>
+    <h2>Knee</h2>
+    <img src="knee-right.png" alt="knee-right">
+    <p>The patella, or kneecap, is a small, triangular bone that sits in front of the knee joint. It protects the joint from injury and increases the leverage of the thigh muscles, 
+      helping the leg to extend efficiently. The patella plays an important role in stabilizing the knee and allowing smooth movement during walking, running, and jumping.</p>
+  </div>
+
+  <div id="popup-knee-left" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-knee-left').classList.remove('show')">Close</button></div>
+    <h2>Knee</h2>
+    <img src="knee-left.png" alt="knee-left">
+    <p>The patella, or kneecap, is a small, triangular bone that sits in front of the knee joint. It protects the joint from injury and increases the leverage of the thigh muscles, 
+      helping the leg to extend efficiently. The patella plays an important role in stabilizing the knee and allowing smooth movement during walking, running, and jumping.</p>
+  </div>
+
+<div id="popup-lower-leg-right" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-lower-leg-right').classList.remove('show')">Close</button></div>
+    <h2>Lower leg</h2>
+    <img src="lower-leg-right.png" alt="lower-leg-right">
+    <p>The lower leg contains two bones, the tibia and the fibula. The tibia, or shinbone, is the larger bone on the inner side and bears most of the body s weight, 
+      forming the main structure of the lower leg. The fibula is thinner and lies on the outer side, providing stability and serving as an attachment point for muscles. 
+      Together, these bones support the leg, enable movement, and connect the knee to the ankle.</p>
+  </div>
+
+  <div id="popup-lower-leg-left" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-lower-leg-left').classList.remove('show')">Close</button></div>
+    <h2>Lower leg</h2>
+    <img src="lower-leg-left.png" alt="lower-leg-left">
+    <p>The lower leg contains two bones, the tibia and the fibula. The tibia, or shinbone, is the larger bone on the inner side and bears most of the body s weight, 
+      forming the main structure of the lower leg. The fibula is thinner and lies on the outer side, providing stability and serving as an attachment point for muscles. 
+      Together, these bones support the leg, enable movement, and connect the knee to the ankle.</p>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div id="popup-left-arm" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-left-arm').classList.remove('show')">Close</button></div>
+    <h2>Left hand</h2>
+    <img src="just-left-hand.png" alt="Lijeva ruka">
+    <p>The arm consists of three main bones: the humerus, the radius and the ulna. Enables precise movements and manipulation of objects. Joints such as the elbow and wrist allow for flexibility. Arm muscles help in lifting and carrying objects. Fingers enable precise movements.</p>
+  </div>
+
+  <div id="popup-right-arm" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-right-arm').classList.remove('show')">Close</button></div>
+    <h2>Right hand</h2>
+    <img src="just-right-hand.png" alt="Desna ruka">
+    <p>The right hand has the same structure as the left, but right-handed people usually have more power and precision. The humerus, radius and ulna make up the skeleton of the arm. Fingers and thumb enable grasping and precise movements. Arm muscles allow lifting and control of movement. Joints provide flexibility and stability.</p>
+  </div>
+
+
+  <!-- Pop-up za lijevu nogu -->
+  <div id="popup-left-leg" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-left-leg').classList.remove('show')">Close</button></div>
+    <h2>Left Foot</h2>
+    <img src="left-leg.png" alt="Lijeva noga">
+    <p>The foot contains 26 bones organized into three groups:Tarsals (7): Form the ankle and heel. Key bones are the Talus (ankle joint) and Calcaneus (heel).Metatarsals (5): The long bones in the middle of the foot.
+      Phalanges (14): The toe bones.Held together by ligaments, these bones form arches for shock absorption and stability. The skeleton's primary function is to support body weight 
+      and act as a rigid lever for propulsion during walking. Common issues include fractures, arthritis, and bony deformities like bunions.</p>
+  </div>
+
+  <!-- Pop-up za desnu nogu -->
+  <div id="popup-right-leg" class="popup">
+    <div class="close-btn"><button onclick="document.getElementById('popup-right-leg').classList.remove('show')">Close</button></div>
+    <h2>Right Foot</h2>
+    <img src="right-leg.png" alt="Desna noga">
+    <p>The foot contains 26 bones organized into three groups:Tarsals (7): Form the ankle and heel. Key bones are the Talus (ankle joint) and Calcaneus (heel).Metatarsals (5): The long bones in the middle of the foot.
+      Phalanges (14): The toe bones.Held together by ligaments, these bones form arches for shock absorption and stability. The skeleton's primary function is to support body weight 
+      and act as a rigid lever for propulsion during walking. Common issues include fractures, arthritis, and bony deformities like bunions.</p>
+  </div>
+
+</body>
+</html>
